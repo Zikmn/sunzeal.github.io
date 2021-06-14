@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DIY标签小工具</title>
+<style type="text/css">
+#showvalue { padding: 10px; line-height: 39px; }
+.xuanze { width: 35px; height: 35px; float: left; }
+.main { width: 1231px; margin-left: auto; margin-right: auto; }
+.bqlb { width: 1000px; background-color: #646464; height: 284px; }
+body { background-color: #3A3939; }
+.main  span { width: 100%; display: block; height: 40px; clear: both; line-height: 40px; background-color: #646464; }
+ span p { width: 210px; height: 40px; display: block; float: left; background-color: #C3C3C3; }
+</style>
+</head>
+<body>
+<script language="javascript">
+function showbiaoqian() {  
+  var a1 ='\
+文章标题  {$news[\'title\']}   \n\
+文章发布者{$user[\'username\']}  \n\
+浏览次数：{$news[\'click\']}次    \n\
+文章内容 {$news[\'content\']}   \n\
+';
+  var a2 ='\
+ a2内容    \n\
+';
+  var a3 ='\
+ a3内容   \n\
+';
+  var a4 ='\
+ a4内容    \n\
+';
+  var a5 ='\
+ a5内容    \n\
+';  
+  //上方为存放标签
+var dxa = document.getElementsByName("rad");
+    var n;
+    for(var i=0;i<dxa.length;i++) {
+      if(dxa[i].checked) {    
+      n = dxa[i].value;
+      itemValue = eval(n);    
+    document.getElementById("diysl-showbq").value=itemValue;  
+      break;}
+    }}
+</script>
+<div class="main">
+<div class="diy-bqlb">
+<span><p>
+<input name="rad" type="radio" class="xuanze"  onClick="showbiaoqian();"    value="a1">系统全局标签</p>
+<p><input name="rad" type="radio" class="xuanze" onClick="showbiaoqian();"  value="a2">分类导航与falsh标签</p>
+<p><input name="rad" type="radio" class="xuanze" onClick="showbiaoqian();"  value="a3">单页面以及自定义标签</p>
+<p><input name="rad" type="radio" class="xuanze" onClick="showbiaoqian();"  value="a4">网站导航</p>
+</span>
+<span>
+<p><input name="rad" type="radio" class="xuanze" onClick="showbiaoqian();"  value="a5">文章列表</p>
+<p><input name="rad" type="radio" class="xuanze" onClick="showbiaoqian();"  value="a6">文章内容页</p>
+<p><input name="rad" type="radio" class="xuanze" onClick="showbiaoqian();"  value="a7">产品列表页</p>
+<p><input name="rad" type="radio" class="xuanze" onClick="showbiaoqian();"  value="a8">产品内容页</p>
+<p><input name="rad" type="radio" class="xuanze" onClick="showbiaoqian();"  value="a9">招聘列表</p>
+<p><input name="rad" type="radio" class="xuanze" onClick="showbiaoqian();"  value="a10">招聘内容</p>
+</span>
+<span>
+<p><input name="rad" type="radio" class="xuanze"  value="11">留言标签</p>
+<p><input name="rad" type="radio" class="xuanze"  value="12">在线订单标签</p>
+<p><input name="rad" type="radio" class="xuanze"  value="13">网站地图与扩展</p>
+</span>
+<br>
+<textarea id="diysl-showbq" name="showbq" cols="150" rows="20"></textarea>
+</div>
+</body>
+</html>
